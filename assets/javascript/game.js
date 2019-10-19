@@ -89,9 +89,10 @@ $(document).ready(function() {
               let qCounter = 1;
               let intervalId;
               let clockRunning;
-              let gameOver = false;
-              let turnOver = false;
-              let qNumber = qnaArray.length;
+              let corAnswers=0;
+              let inCorAnswers=0;
+              let unAnswered=0;
+            //   let qNumber = qnaArray.length;
      //functions
               //code to reset timers for each new question
     function init(i) {
@@ -127,7 +128,8 @@ $(document).ready(function() {
                           //  ...run the stop function.
                           stop();
                           //  Alert the user that time is up.
-                          $("#q").text("Out of Time!");  
+                          $("#q").text("Out of Time!");
+                          unAnswered++;  
                           runA();
                       }
                   };
@@ -155,9 +157,9 @@ $(document).ready(function() {
                       //  Alert the user that time is up.
                       $("#q").text("All Done!");
                       $("#a1").text("Here's how you did!");
-                      $("#a2").text("Correct Answers = XXX");
-                      $("#a3").text("Incorrect Answers = XXX");
-                      $("#a4").text("Unanswered = XXX");
+                      $("#a2").text("Correct Answers = "+corAnswers);
+                      $("#a3").text("Incorrect Answers = "+inCorAnswers);
+                      $("#a4").text("Unanswered = "+unAnswered);
     //                  $(".gameButton").html("test");
                       $("#start").html("<button id='start'>Start Over??</button>"); ///not working
                       stop();
@@ -197,11 +199,8 @@ $(document).ready(function() {
            console.log(event.target.id);
                   let turnAns = event.target.id;
                     qCounter--;
-                   console.log("ans picked = " + turnAns);
-                   console.log("qcounter on click = "+qCounter);
-    
-                   console.log("cor ans array= " + qnaArray[i].corAnsId);
-    
+                   console.log("ans picked = " + turnAns);    
+                   console.log("cor ans id= " + qnaArray[i].corAnsId);    
                    let fullAnswer = qnaArray[i].corAnsText;
                    console.log("cor ans text = " + qnaArray[i].fullAnswer);
                    console.log(qnaArray[i].fullAnswer);
@@ -214,12 +213,13 @@ $(document).ready(function() {
                    
                    if (turnAns == qnaArray[i].corAnsId) {
                           $("#q").text("Correct!");    //display right answer plus gif, etc
-                  
-                          $("#a2").html("<img "+qnaArray[i].pic);
+                          corAnswers++;
+                          $("#a3").html("<img "+qnaArray[i].pic);
                    } else {
                        $("#q").text("Nope!");     //display right answer plus gif, etc
+                       inCorAnswers++;
                        $("#a1").text("The Correct Answer was:  " +fullAnswer);
-                       $("#a2").html("<img " + qnaArray[i].pic);
+                       $("#a3").html("<img " + qnaArray[i].pic);
                    };
                 }); 
               });  

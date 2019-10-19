@@ -1,29 +1,36 @@
 /* style sheet for apollo trivia game */
 html {
-    background: url("triviabackground.jpg") no-repeat center center fixed;
+
+}
+
+body {
+    background: url("earthrise.png") no-repeat center center fixed;
     background-size: cover;
     height: 100%;
     overflow: hidden;
 }
 
-
-
-body {
-
-}
-
-
 h1,h2  {
+    display: block;
     color: white;
     text-align: center;
+    font-weight: bold;
+    width: 90%;
+    margin: 3% auto;
+    padding: 1%;
+    /* background-color: rgba(22,21,55,1); */
 }
 
-
-
 p {
+    display: block;
     font-size: 24px;
     color: white;
     text-align: center;
+    font-weight: bold;
+    width: 30%;
+    margin: 1% auto;
+    /* background-color: rgba(22,21,55,1); */
+    line-height: 2;
 }
 
 div {
@@ -32,17 +39,16 @@ div {
 }
 
 button {
-    background-color: blue;
+    background-color: rgba(22,21,55,1);
     border: 2px solid white;
     color: white;
     padding: 15px 32px;
     text-align: center;
-    font-size: 16px;
+    font-size: 28px;
     cursor: pointer;
 }
 
 .gameButton {
-    background-color: yellow;
     text-align: center;
     margin: 20% auto;
     color: white;
@@ -51,10 +57,10 @@ button {
 
 img {
     background-color: white;
-    height: 100px;
-    width: 100px;
-    margin: 0;
-    padding: 0;
-    border: 2px solid tan;
+    height: 250px;
+    width: 250px;
+    margin: auto;
+    padding: 2px;
+    border: 2px solid white;
 }
 
