@@ -7,6 +7,5 @@ Directions:
 4.  After reaching the last question, an alert will let you know that the game is over.
 5.  The display will indicate how many questions were answered correct, incorrect and unanswered.
 
-Known issues:
-1.  Game display is incorrect for unanswered questions (should display correct answer and an image).
-2.  Play again button not displaying at end of game.
+Known issue:
+1.  "Start Over" button displayed at the end of the game not currently functioning.
