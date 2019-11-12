@@ -9,3 +9,6 @@ Directions:
 
 Known issue:
 1.  "Start Over" button displayed at the end of the game not currently functioning.
+
+Link:
+https://rgvegajr.github.io/TriviaGame/
